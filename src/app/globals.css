@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fbfbf9;
+  --foreground: #1c1c1a;
+  --card: #ffffff;
+  --card-foreground: #1c1c1a;
+  --muted: #f4f3ef;
+  --muted-foreground: #737370;
+  --border: #e6e5e0;
+}
+
+.dark {
+  --background: #121211;
+  --foreground: #f4f4f2;
+  --card: #1c1c1a;
+  --card-foreground: #f4f4f2;
+  --muted: #262624;
+  --muted-foreground: #a1a19d;
+  --border: #2e2e2b;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(160, 160, 160, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 160, 160, 0.45);
+}
+
+/* Markdown styling inside reflection messages */
+.prose-reflection h1,
+.prose-reflection h2,
+.prose-reflection h3 {
+  font-weight: 600;
+  color: inherit;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-reflection p {
+  margin-bottom: 0.75rem;
+  line-height: 1.65;
+}
+
+.prose-reflection p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-reflection ul,
+.prose-reflection ol {
+  padding-left: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-reflection li {
+  margin-bottom: 0.25rem;
+  list-style-type: disc;
+}
+
+.prose-reflection blockquote {
+  border-left: 3px solid #d38051;
+  padding-left: 0.75rem;
+  font-style: italic;
+  margin: 0.75rem 0;
+  color: #737370;
+}
