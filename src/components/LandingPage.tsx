@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import {
   Sparkles,
@@ -12,6 +13,7 @@ import {
   Settings,
   Flame,
   CheckCircle,
+  Briefcase,
 } from 'lucide-react';
 import { ConfigGuide } from './ConfigGuide';
 
@@ -34,6 +36,14 @@ export function LandingPage() {
           </div>
 
           <div className="flex items-center gap-3">
+            <Link
+              href="/portfolio"
+              className="px-3 py-1.5 rounded-lg border border-amber-200/80 bg-amber-50/60 hover:bg-amber-100/70 text-xs font-medium text-amber-900 flex items-center gap-1.5 transition shadow-2xs"
+            >
+              <Briefcase className="w-3.5 h-3.5 text-amber-700" />
+              <span>Developer Portfolio</span>
+            </Link>
+
             <button
               onClick={() => setShowConfig(!showConfig)}
               className="px-3 py-1.5 rounded-lg border border-[#e6e5e0] hover:bg-gray-50 text-xs font-medium text-gray-600 flex items-center gap-1.5 transition"
@@ -222,8 +232,16 @@ export function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#e6e5e0] py-6 text-center text-xs text-gray-500">
-        Personal Gemini Journal &bull; Strictly Isolated User Data &bull; Powered by Google AI
+      <footer className="border-t border-[#e6e5e0] py-6 text-xs text-gray-500 bg-white/40">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span>Personal Gemini Journal &bull; Strictly Isolated User Data &bull; Powered by Google AI</span>
+          <Link
+            href="/portfolio"
+            className="text-amber-700 hover:text-amber-800 font-medium inline-flex items-center gap-1.5 transition"
+          >
+            <span>Built by Muhammad Asif &rarr; View Portfolio</span>
+          </Link>
+        </div>
       </footer>
     </div>
   );

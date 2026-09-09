@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
 import { JournalSession } from '@/types';
 import {
@@ -14,6 +15,8 @@ import {
   CheckCircle2,
   FileText,
   X,
+  Briefcase,
+  ArrowUpRight,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -202,6 +205,17 @@ export function Sidebar({
 
         {/* User Footer */}
         <div className="p-3 border-t border-[#e6e5e0] bg-gray-50/50 flex flex-col gap-2">
+          <Link
+            href="/portfolio"
+            className="px-2.5 py-1.5 rounded-lg border border-amber-200/80 bg-white hover:bg-amber-50 text-[11px] font-medium text-gray-700 flex items-center justify-between transition shadow-2xs group"
+          >
+            <span className="flex items-center gap-1.5">
+              <Briefcase className="w-3.5 h-3.5 text-amber-600 group-hover:scale-110 transition" />
+              <span>Developer Portfolio</span>
+            </span>
+            <ArrowUpRight className="w-3 h-3 text-gray-400 group-hover:text-amber-600 transition" />
+          </Link>
+
           {isDemoMode && (
             <div className="px-2 py-1 rounded bg-amber-100/70 border border-amber-200 text-amber-800 text-[10px] flex items-center justify-between">
               <span>Local Demo Mode</span>
